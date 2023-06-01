@@ -75,25 +75,26 @@ body {
   display: flex;
   justify-content: center;
   gap: 50px;
-}
-@media screen and (max-width: 576px) {
-  gap: 30px;
-}
-& > div {
-  text-transform: lowercase;
-  font-weight: bold;
-  letter-spacing: 2px;
-  text-align: center;
 
-  & > *:first-child {
-    font-weight: bold;
-    letter-spacing: 3px;
-    font-size: 2rem;
-    margin-bottom: 15px;
+  @media screen and (max-width: 576px) {
+    gap: 30px;
   }
-  & > *:last-child {
-    font-size: 16px;
-    opacity: 0.5;
+  & > div {
+    text-transform: lowercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-align: center;
+
+    & > *:first-child {
+      font-weight: bold;
+      letter-spacing: 3px;
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+    & > *:last-child {
+      font-size: 16px;
+      opacity: 0.5;
+    }
   }
 }
 
@@ -113,9 +114,8 @@ body {
   align-items: center;
   position: relative;
   flex-shrink: 0;
-  transition: all .2s;
+  transition: all 0.2s;
   justify-content: center;
-  
 
   @media screen and (max-widt: 768) {
     width: 50px;
@@ -179,10 +179,8 @@ body {
       min-width: 170px;
     }
 
-    @media screen and (max-width:576px) {
+    @media screen and (max-width: 576px) {
       min-width: inherit;
-
-    }
     }
   }
 }
