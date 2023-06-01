@@ -2,7 +2,7 @@
 
 body {
   font: 18px "Numito, sans-serif";
-  color: black;
+  color: rgb(236, 225, 225);
   min-height: 100vh;
   padding: 2rem;
   display: flex;
@@ -15,12 +15,13 @@ body {
     inset: 0;
     z-index: -1;
     pointer-events: none;
-    background: url("/aset/bg.jpg") no-repeat;
+    background: url("/aset/bg2.jpg") no-repeat;
     background-size: cover;
+    animation: backgroundZoomAnimate 50s forwards;
   }
 }
 
-@keyframes backgrounAnimate {
+@keyframes backgroundZoomAnimate {
   from {
     transform: scale(1);
   }
@@ -35,18 +36,153 @@ body {
   width: 650px;
   position: relative;
   backdrop-filter: blur(15px);
-  border: 2px solid #ffffff40;
+  border: 3px solid #f38d0740;
   padding: 3rem 5rem;
   display: flex;
   flex-direction: column;
-  gap: 40px;
-}
+  gap: 60px;
 
-@media screen and (max-width: 768px) {
-  width: auto;
+  @media screen and (max-width: 768px) {
+    width: auto;
+  }
 }
-
-&_img img {
+.profile-card_img img {
   margin: auto;
   width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  box-shadow: 0 10px 60px -5px rgba(13, 28, 39, 0.5);
+}
+
+.profile-card_desc {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.profile-card_desc h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+
+  & + div {
+    font-size: 20px;
+  }
+}
+
+.profile-card_info {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+@media screen and (max-width: 576px) {
+  gap: 30px;
+}
+& > div {
+  text-transform: lowercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-align: center;
+
+  & > *:first-child {
+    font-weight: bold;
+    letter-spacing: 3px;
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+  & > *:last-child {
+    font-size: 16px;
+    opacity: 0.5;
+  }
+}
+
+.profile-card_social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.profile-card_social a {
+  display: inline-flex;
+  width: 50px;
+  color: white;
+  height: 50px;
+  margin: 15px;
+  border-radius: 25%;
+  align-items: center;
+  position: relative;
+  flex-shrink: 0;
+  transition: all .2s;
+  justify-content: center;
+  
+
+  @media screen and (max-widt: 768) {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+  }
+
+  @media and (min-width: 768px) {
+    &:hover {
+      transform: scale(1.2) translateY(-5px);
+    }
+  }
+
+  &.facebook {
+    background: linear-gradient(45deg, #698edd, #0078d7);
+    box-shadow: 0 4px 30px rgba(43, 98, 169, 0, 5);
+  }
+  &.twitter {
+    background: linear-gradient(45deg, #1f1e74, #0078d7);
+    box-shadow: 0 4px 30px rgba(43, 98, 169, 0, 5);
+  }
+  &.instagram {
+    background: linear-gradient(45deg, #2f2cf1, #e66f20);
+    box-shadow: 0 4px 30px rgba(43, 98, 169, 0, 5);
+  }
+
+  &.linkedn {
+    background: linear-gradient(45deg, #2f2cf1, #1a17cf);
+    box-shadow: 0 4px 30px rgba(43, 98, 169, 0, 5);
+  }
+
+  &.github {
+    background: linear-gradient(45deg, #1f1f22, #41404e);
+    box-shadow: 0 4px 30px rgba(43, 98, 169, 0, 5);
+  }
+}
+
+.profile-card_actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+
+  @media screen and (max-widt: 576px) {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  & > button {
+    font-weight: bold;
+    font-size: 22px;
+    padding: 15px 0;
+    min-width: 250px;
+    border-radius: 20%;
+    text-justify: auto;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s;
+    height: 50px;
+
+    @media screen and (max-width: 768px) {
+      min-width: 170px;
+    }
+
+    @media screen and (max-width:576px) {
+      min-width: inherit;
+
+    }
+    }
+  }
 }
